@@ -7,7 +7,11 @@ RUN yum -y update && \
         unzip \
         nc \
         httpd && \
-    yum clean all
+    yum clean all && \
+    rm -rf \
+        /tmp/* \
+        /var/tmp/* \
+        /var/www/html/*
 COPY httpd.conf /etc/httpd/conf/httpd.conf
 RUN apachectl -t && apachectl -k graceful
 EXPOSE 80

@@ -3,6 +3,7 @@ MAINTAINER Gravitee Team <http://gravitee.io>
 RUN echo "sslverify=false" >> /etc/yum.conf
 RUN yum -y update && \
     yum install -y \
+        zip \
         wget \
         unzip \
         nc \

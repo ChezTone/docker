@@ -12,9 +12,9 @@ RUN gem install sass && gem install compass
 RUN mkdir /var/temp
 RUN node --version
 RUN cd /var/temp && git clone 'https://github.com/Tony-Proum/cheztone-nuts.git'
-RUN cd /var/temp/cheztone-frontend && npm install && bower install --allow-root && grunt build
+RUN cd /var/temp/cheztone-nuts && npm install && bower install --allow-root && grunt build
 RUN rm -rf /var/www/html/*
-RUN cp -r /var/temp/cheztone-frontend/dist/* /var/www/html
+RUN cp -r /var/temp/cheztone-nuts/dist/* /var/www/html
 
 EXPOSE 80
 
